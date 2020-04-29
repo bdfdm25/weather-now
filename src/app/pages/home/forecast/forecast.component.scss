@@ -1,0 +1,56 @@
+.container-fluid {
+  .card {
+    color: #FFF;
+    margin-bottom: 1rem;
+    border: none;
+
+    .card-body {
+      .week-day {
+        font-weight: bold;
+      }
+      .status-block {
+        text-align: center;
+        border-left: 1px solid #FFF;
+        border-right: 1px solid #FFF;
+        padding: 0.5rem 0;
+
+        .status {
+          margin-left: 1rem;
+          font-weight: bold;
+        }
+      }
+
+      .temperature-block {
+        .small-text {
+          font-size: 0.8rem;
+          padding: 0 0.3rem;
+        }
+
+        .min-temp {
+          padding-bottom: 0.8rem;
+        }
+      }
+    }
+    
+  }
+
+  .blue-card {
+    background-image: linear-gradient(90deg, #45AAF2, #3867D6); 
+  }
+
+  .orange-card {
+    background-image: linear-gradient(90deg, #FED330, #FA8231); 
+  }
+
+  .green-card {
+    background-image: linear-gradient(90deg, #4FD18F, #3D9165); 
+  }
+
+  .purple-card {
+    background-image: linear-gradient(90deg, #AF78E5, #5F349A); 
+  }
+
+  .pink-card {
+    background-image: linear-gradient(90deg, #F4A9AD, #C73D56); 
+  }
+}
