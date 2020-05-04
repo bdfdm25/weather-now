@@ -4,7 +4,8 @@
       <div class="location">
         <img id="location-icon" src="../../../../assets/images/icons/ic_location.svg" alt="location" />
         <span id="location-text">
-          <h3>Campinas</h3>
+          <h3 *ngIf="this.weatherInfo">{{weatherInfo.name}}</h3>
+          <h3 *ngIf="!this.weatherInfo">--</h3>
           <span class="small-text">Quin, 10 de outubro de 2019</span>
         </span>
       </div>

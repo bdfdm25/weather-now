@@ -1,20 +1,18 @@
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { ComponentsModule } from './components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { InterceptorModule } from './modules/interceptor.module';
 
 @NgModule({
-  declarations: [
-    NavbarComponent
-  ],
   imports: [
     CommonModule,
     HttpClientModule,
+    InterceptorModule,
+    ComponentsModule
   ],
   exports: [
-    NavbarComponent
-  ],
-  providers: [
+    ComponentsModule
   ]
 })
 export class SharedModule { }
