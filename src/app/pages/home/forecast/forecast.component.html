@@ -1,16 +1,16 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="this.forecastInfo">
   <div class="card blue-card" *ngFor="let forecast of forecastInfo.list">
-    <div class="card-body">
+    <div class="card-body forecast-card">
       <div class="row">
-        <div class="col-3">
-          <div class="week-day">Sexta</div>
-          {{forecast.dt_txt | date:'shortDate':'+0300':'pt'}}
+        <div class="col-4 day-block">
+          <div class="week-day">{{forecast.dt_txt | dateFormat:'dddd'}}</div>
+          {{forecast.dt_txt | dateFormat}}
         </div>
-        <div class="col-5 status-block">
+        <div class="col-4 status-block">
           <img src="../../../../assets/images/icons/{{forecast.weather[0].icon}}_w.svg" alt="ensolarado"/>
-          <span class="status">{{forecast.weather[0].description}}</span>
+          <div class="status">{{forecast.weather[0].description}}</div>
         </div>
-        <div class="col-3 temperature-block">
+        <div class="col-4 temperature-block">
           <div class="min-temp">
             <img src="../../../../assets/images/icons/ic_min_w.svg" alt=""/>
             <span class="small-text">Min.</span> {{forecast.main.temp_min | number:'1.0-0'}}°

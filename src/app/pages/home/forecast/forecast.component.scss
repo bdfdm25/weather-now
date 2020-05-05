@@ -4,24 +4,37 @@
     margin-bottom: 1rem;
     border: none;
 
-    .card-body {
-      .week-day {
-        font-weight: bold;
+    .forecast-card {
+      padding: 1.1rem 1rem;
+
+      .day-block {
+        text-align: center;
+        margin-top: 3%;
+        
+        .week-day {
+          font-weight: bold;
+          text-transform: capitalize;
+        }
       }
+
       .status-block {
-        text-align: left;
+        text-align: center;
         border-left: 1px solid #FFF;
         border-right: 1px solid #FFF;
-        padding: 0.5rem 0.5rem;
+        padding: 0.5rem 0;
+        font-size: 0.8rem;
 
         .status {
-          margin-left: 1rem;
+          // margin-left: 1rem;
+          margin: 0.5rem;
           font-weight: bold;
           text-transform: capitalize;
         }
       }
 
       .temperature-block {
+        left: 1.5rem;
+
         .small-text {
           font-size: 0.8rem;
           padding: 0 0.3rem;
@@ -32,26 +45,26 @@
         }
       }
     }
-    
+
   }
 
   .blue-card {
-    background-image: linear-gradient(90deg, #45AAF2, #3867D6); 
+    background-image: linear-gradient(90deg, #45AAF2, #3867D6);
   }
 
   .orange-card {
-    background-image: linear-gradient(90deg, #FED330, #FA8231); 
+    background-image: linear-gradient(90deg, #FED330, #FA8231);
   }
 
   .green-card {
-    background-image: linear-gradient(90deg, #4FD18F, #3D9165); 
+    background-image: linear-gradient(90deg, #4FD18F, #3D9165);
   }
 
   .purple-card {
-    background-image: linear-gradient(90deg, #AF78E5, #5F349A); 
+    background-image: linear-gradient(90deg, #AF78E5, #5F349A);
   }
 
   .pink-card {
-    background-image: linear-gradient(90deg, #F4A9AD, #C73D56); 
+    background-image: linear-gradient(90deg, #F4A9AD, #C73D56);
   }
 }

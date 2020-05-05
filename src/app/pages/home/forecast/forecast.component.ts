@@ -16,7 +16,7 @@ export class ForecastComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.weatherService.getForecastInfo().subscribe((res: ForecastResponse) => { this.forecastInfo = res; console.log(this.forecastInfo)});
+    this.weatherService.getForecastInfo().subscribe((res: ForecastResponse) => { this.forecastInfo = res; });
   }
 
 }

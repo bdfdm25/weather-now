@@ -1,11 +1,10 @@
 <div class="container-fluid">
-  <div class="card forecast-card">
+  <div class="card forecast-card" *ngIf="this.weatherInfo">
     <div class="card-header">
       <div class="location">
         <img id="location-icon" src="../../../../assets/images/icons/ic_location.svg" alt="location" />
         <span id="location-text">
-          <h3 *ngIf="this.weatherInfo">{{weatherInfo.name}}</h3>
-          <h3 *ngIf="!this.weatherInfo">--</h3>
+          <h3>{{weatherInfo.name}}</h3>
           <span class="small-text">{{today | date:'fullDate':'+0300':'pt'}}</span>
         </span>
       </div>
@@ -26,7 +25,7 @@
           <img id="med-icon" src="../../../../assets/images/icons/ic_med.svg" alt="med temperature" />
           <div id="temperature-info">
             <span id="temperature-value">{{weatherInfo.main.temp | number:'1.0-0'}}°</span>
-            <span id="thermic-sensation">Sensação Térmica {{weatherInfo.main.feels_like | number:'1.1-2'}}°</span>
+            <span class="small-text" id="thermic-sensation">Sensação Térmica {{weatherInfo.main.feels_like | number:'1.1-2'}}°</span>
           </div>
         </div>
         <div class="col-6 weather">
@@ -34,7 +33,6 @@
             <img src="../../../../assets/images/icons/{{weatherInfo.weather[0].icon}}.svg" alt="med temperature" class="img-fluid"/>
           </div>
           <div id="weather-status">{{weatherInfo.weather[0].description}}</div>
-
         </div>
       </div>
 
