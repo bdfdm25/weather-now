@@ -6,6 +6,7 @@
 
   .small-text {
     font-size: 1rem;
+    text-transform: capitalize;
   }
 
   .card-header {
@@ -91,6 +92,7 @@
       
       #weather-status {
         text-align: center;
+        text-transform: capitalize;
         margin-top: 2rem;
         font-weight: bold;
         font-size: 1.8rem;

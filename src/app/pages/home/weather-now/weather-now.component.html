@@ -6,17 +6,17 @@
         <span id="location-text">
           <h3 *ngIf="this.weatherInfo">{{weatherInfo.name}}</h3>
           <h3 *ngIf="!this.weatherInfo">--</h3>
-          <span class="small-text">Quin, 10 de outubro de 2019</span>
+          <span class="small-text">{{today | date:'fullDate':'+0300':'pt'}}</span>
         </span>
       </div>
       <div class="min-max-temp">
         <div class="min">
           <img class="min-icon" src="../../../../assets/images/icons/ic_min.svg" alt="min temperature" />
-          <span class="temp-text small-text"><strong>Min.</strong> 15°</span>
+          <span class="temp-text small-text"><strong>Min.</strong> {{weatherInfo.main.temp_min | number:'1.0-0'}}° </span>
         </div>
         <div class="max">
           <img id="max-icon" src="../../../../assets/images/icons/ic_max.svg" alt="max temperature" />
-          <span class="temp-text small-text"><strong>Max.</strong> 26°</span>
+          <span class="temp-text small-text"><strong>Max.</strong> {{weatherInfo.main.temp_max | number:'1.0-0'}}° </span>
         </div>
       </div>
     </div>
@@ -25,15 +25,15 @@
         <div class="col-6 temperature">
           <img id="med-icon" src="../../../../assets/images/icons/ic_med.svg" alt="med temperature" />
           <div id="temperature-info">
-            <span id="temperature-value">23°</span>
-            <span id="thermic-sensation">Sensação Térmica 22°</span>
+            <span id="temperature-value">{{weatherInfo.main.temp | number:'1.0-0'}}°</span>
+            <span id="thermic-sensation">Sensação Térmica {{weatherInfo.main.feels_like | number:'1.1-2'}}°</span>
           </div>
         </div>
         <div class="col-6 weather">
           <div id="weather-icon">
-            <img src="../../../../assets/images/icons/ic_cloud.svg" alt="med temperature" class="img-fluid"/>
+            <img src="../../../../assets/images/icons/{{weatherInfo.weather[0].icon}}.svg" alt="med temperature" class="img-fluid"/>
           </div>
-          <div id="weather-status">Nublado</div>
+          <div id="weather-status">{{weatherInfo.weather[0].description}}</div>
 
         </div>
       </div>
@@ -44,7 +44,7 @@
             <div class="card-body">
               <div><img src="../../../../assets/images/icons/ic_humidity.svg" alt="umidade"/></div>
               <div class="general-info-title">Umidade</div>
-              <div class="general-info-value">66%</div>
+              <div class="general-info-value">{{weatherInfo.main.humidity}}</div>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="card-body">
               <div><img src="../../../../assets/images/icons/ic_wind_velocity.svg" alt="velocidade vento"/></div>
               <div class="general-info-title">Velocidade do Vento</div>
-              <div class="general-info-value">23km/h</div>
+              <div class="general-info-value">{{weatherInfo.wind.speed}} km/h</div>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
             <div class="card-body">
               <div><img src="../../../../assets/images/icons/ic_wind_direction.svg" alt="direcao vento"/></div>
               <div class="general-info-title">Direção do Vento</div>
-              <div class="general-info-value">ND</div>
+              <div class="general-info-value">{{weatherInfo.wind.deg}}°</div>
             </div>
           </div>
         </div>

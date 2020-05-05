@@ -8,15 +8,29 @@ import { WeatherService } from '../../services/weather.service';
 })
 export class NavbarComponent implements OnInit {
 
+  public lat: string;
+  public lon: string;
+
   constructor(
     private weatherService: WeatherService
   ) { }
 
   ngOnInit() {
+    this.getUserGeoLocation();
   }
 
   onSearch(cityName: string) {
-    this.weatherService.getCurrentWeather(cityName);
+    this.weatherService.getWeatherByCity(cityName);
+    this.weatherService.getForecastByCity(cityName);
+  }
+
+  getUserGeoLocation() {
+    window.navigator.geolocation.getCurrentPosition(res => {
+      this.lat = res.coords.latitude.toString();
+      this.lon = res.coords.longitude.toString();
+      this.weatherService.getWeatherByCoords(this.lat, this.lon);
+      this.weatherService.getForecastByCoords(this.lat, this.lon);
+    });
   }
 
 }

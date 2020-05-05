@@ -1,29 +1,29 @@
 <div class="container-fluid">
-  <div class="card blue-card">
+  <div class="card blue-card" *ngFor="let forecast of forecastInfo.list">
     <div class="card-body">
       <div class="row">
         <div class="col-3">
           <div class="week-day">Sexta</div>
-          11/10/19
+          {{forecast.dt_txt | date:'shortDate':'+0300':'pt'}}
         </div>
         <div class="col-5 status-block">
-          <img src="../../../../assets/images/icons/ic_sunny_w.svg" alt="ensolarado"/>
-          <span class="status">Ensolarado</span>
+          <img src="../../../../assets/images/icons/{{forecast.weather[0].icon}}_w.svg" alt="ensolarado"/>
+          <span class="status">{{forecast.weather[0].description}}</span>
         </div>
         <div class="col-3 temperature-block">
           <div class="min-temp">
             <img src="../../../../assets/images/icons/ic_min_w.svg" alt=""/>
-            <span class="small-text">Min.</span> 15°
+            <span class="small-text">Min.</span> {{forecast.main.temp_min | number:'1.0-0'}}°
           </div>
           <div>
             <img src="../../../../assets/images/icons/ic_max_w.svg" alt=""/>
-            <span class="small-text">Max.</span> 25°
+            <span class="small-text">Max.</span> {{forecast.main.temp_max | number:'1.0-0'}}°
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="card orange-card">
+  <!-- <div class="card orange-card">
     <div class="card-body">
       <div class="row">
         <div class="col-3">
@@ -118,5 +118,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

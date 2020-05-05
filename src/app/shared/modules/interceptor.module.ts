@@ -4,8 +4,7 @@ import {
   HTTP_INTERCEPTORS,
   HttpRequest,
   HttpHandler,
-  HttpEvent,
-  HttpParams,
+  HttpEvent
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -22,7 +21,8 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
     const dupReq = req.clone({
       setParams: {
         APPID: this.API_KEY,
-        units: this.UNITS
+        units: this.UNITS,
+        lang: 'pt_br'
       }
     });
     return next.handle(dupReq);
