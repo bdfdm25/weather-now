@@ -2,7 +2,7 @@
   <div class="card forecast-card" *ngIf="this.weatherInfo">
     <div class="card-header">
       <div class="location">
-        <img id="location-icon" src="../../../../assets/images/icons/ic_location.svg" alt="location" />
+        <img id="location-icon" src="./assets/images/icons/ic_location.svg" alt="location" />
         <span id="location-text">
           <h3>{{weatherInfo.name}}</h3>
           <span class="small-text">{{today | date:'fullDate':'+0300':'pt'}}</span>
@@ -10,11 +10,11 @@
       </div>
       <div class="min-max-temp">
         <div class="min">
-          <img class="min-icon" src="../../../../assets/images/icons/ic_min.svg" alt="min temperature" />
+          <img class="min-icon" src="./assets/images/icons/ic_min.svg" alt="min temperature" />
           <span class="temp-text small-text"><strong>Min.</strong> {{weatherInfo.main.temp_min | number:'1.0-0'}}° </span>
         </div>
         <div class="max">
-          <img id="max-icon" src="../../../../assets/images/icons/ic_max.svg" alt="max temperature" />
+          <img id="max-icon" src="./assets/images/icons/ic_max.svg" alt="max temperature" />
           <span class="temp-text small-text"><strong>Max.</strong> {{weatherInfo.main.temp_max | number:'1.0-0'}}° </span>
         </div>
       </div>
@@ -22,7 +22,7 @@
     <div class="card-body" id="temperature-card">
       <div class="row align-items-start">
         <div class="col-6 temperature">
-          <img id="med-icon" src="../../../../assets/images/icons/ic_med.svg" alt="med temperature" />
+          <img id="med-icon" src="./assets/images/icons/ic_med.svg" alt="med temperature" />
           <div id="temperature-info">
             <span id="temperature-value">{{weatherInfo.main.temp | number:'1.0-0'}}°</span>
             <span class="small-text" id="thermic-sensation">Sensação Térmica {{weatherInfo.main.feels_like | number:'1.1-2'}}°</span>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-6 weather">
           <div id="weather-icon">
-            <img src="../../../../assets/images/icons/{{weatherInfo.weather[0].icon}}.svg" alt="med temperature" class="img-fluid"/>
+            <img src="./assets/images/icons/{{weatherInfo.weather[0].icon}}.svg" alt="med temperature" class="img-fluid"/>
           </div>
           <div id="weather-status">{{weatherInfo.weather[0].description}}</div>
         </div>
@@ -40,7 +40,7 @@
         <div class="col-4">
           <div class="card shadow-sm">
             <div class="card-body">
-              <div><img src="../../../../assets/images/icons/ic_humidity.svg" alt="umidade"/></div>
+              <div><img src="./assets/images/icons/ic_humidity.svg" alt="umidade"/></div>
               <div class="general-info-title">Umidade</div>
               <div class="general-info-value">{{weatherInfo.main.humidity}}</div>
             </div>
@@ -49,7 +49,7 @@
         <div class="col-4">
           <div class="card shadow-sm">
             <div class="card-body">
-              <div><img src="../../../../assets/images/icons/ic_wind_velocity.svg" alt="velocidade vento"/></div>
+              <div><img src="./assets/images/icons/ic_wind_velocity.svg" alt="velocidade vento"/></div>
               <div class="general-info-title">Velocidade do Vento</div>
               <div class="general-info-value">{{weatherInfo.wind.speed}} km/h</div>
             </div>
@@ -58,7 +58,7 @@
         <div class="col-4">
           <div class="card shadow-sm">
             <div class="card-body">
-              <div><img src="../../../../assets/images/icons/ic_wind_direction.svg" alt="direcao vento"/></div>
+              <div><img src="./assets/images/icons/ic_wind_direction.svg" alt="direcao vento"/></div>
               <div class="general-info-title">Direção do Vento</div>
               <div class="general-info-value">{{weatherInfo.wind.deg}}°</div>
             </div>
